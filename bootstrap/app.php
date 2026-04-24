@@ -16,7 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'check.login' => App\Http\Middleware\CheckLogin::class,
         ]);
                 // Custom redirect for guests based on which lab they're accessing
-        $middleware->redirectGuestsTo(function (Request $request) {
+        $middleware->redirectGuestsTo(function (\Illuminate\Http\Request $request) {
             // Redirect ke halaman login lab yang sesuai
             if ($request->routeIs('bac-lab.vulnerable.*')) {
                 return route('bac-lab.vulnerable.login');

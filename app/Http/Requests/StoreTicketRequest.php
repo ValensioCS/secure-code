@@ -41,7 +41,7 @@ class StoreTicketRequest extends FormRequest
             ],
             'category' => [
                 'nullable',
-                'strzing',
+                'string',
                 'max:100',
             ],
         ];
